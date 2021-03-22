@@ -2,21 +2,22 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char *str;
+
+	str = (char*)s;
+	while (*str != c)
 	{
-		s++;
-		if (*s == c)
-			return (s);
-		else
+		if (*str == '\0')
 			return (NULL);
+		str++;
 	}
+	return (str);
 }
 
 int main()
 {
-	char tab[] = "Salut to";
-	int search = 105;
+	char tab[] = "Salut voyez je suis vous";
 
-	printf("%s\n", ft_strchr(tab, search));
+	printf("%s\n", ft_strchr(tab, 118));
 	return 0;
 }
