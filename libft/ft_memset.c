@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 13:48:56 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/23 13:55:00 by kedavain         ###   ########.fr       */
+/*   Created: 2021/03/23 14:43:46 by kedavain          #+#    #+#             */
+/*   Updated: 2021/03/23 14:44:32 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memset(void *b, int c, size_t n)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (*str != '\0')
-		str++;
-	while (*str != c)
-	{
-		str--;
-		if (*str == '\0')
-			return (NULL);
-	}
-	return (str);
+	
 }

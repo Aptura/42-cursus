@@ -3,10 +3,10 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int res;
+	int	res;
 
 	res = 0;
-	while (*nptr == ' ' || *nptr == '\f' || *nptr =='\n')
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n')
 		nptr++;
 	while (*nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
@@ -15,13 +15,5 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + *nptr - 48;
 		nptr++;
 	}
-
 	return (res);
-}
-
-int main()
-{
-	char tab[] = "6852";
-	printf("%d\n", atoi(tab));
-	return (0);
 }

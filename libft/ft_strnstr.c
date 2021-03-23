@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 13:48:56 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/23 13:55:00 by kedavain         ###   ########.fr       */
+/*   Created: 2021/03/23 11:46:31 by kedavain          #+#    #+#             */
+/*   Updated: 2021/03/23 14:08:32 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
+#include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *src, const char *find, size_t n)
 {
-	char	*str;
+	char	*i;
+	size_t	j;
 
-	str = (char *)s;
-	while (*str != '\0')
-		str++;
-	while (*str != c)
+	j = 0;
+	i = 0;
+	if (find == 0)
+		return ((const)src);
+	while (src[j] && j < n)
 	{
-		str--;
-		if (*str == '\0')
-			return (NULL);
+		if (*src == *find)
+			i = *src;
+		i++;
+		j++;
+		src++;
 	}
-	return (str);
+	return (i);
+}
+
+int main()
+{
+	const char tab[] = "Salut";
+	const char tab2[] = "lu";
+
+	printf("%s\n", ft_strnstr(tab, tab2, 5));
+	return 0;
 }

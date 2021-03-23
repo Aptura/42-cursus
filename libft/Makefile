@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I
+CFLAGS = -Wall -Werror -Wextra -I .
 SRC =  # Ajouter chaque fichier en .c ici manuellement
 OBJ = $(SRC:.c=.o) # Prend la variable source pour convertir l'extension de mes .c en .o
 EXEC = libft.a

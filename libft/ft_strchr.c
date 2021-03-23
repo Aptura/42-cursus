@@ -1,10 +1,22 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/23 11:50:34 by kedavain          #+#    #+#             */
+/*   Updated: 2021/03/23 13:44:36 by kedavain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *str;
+	char	*str;
 
-	str = (char*)s;
+	str = (char *)s;
 	while (*str != c)
 	{
 		if (*str == '\0')
@@ -12,12 +24,4 @@ char	*ft_strchr(const char *s, int c)
 		str++;
 	}
 	return (str);
-}
-
-int main()
-{
-	char tab[] = "Salut voyez je suis vous";
-
-	printf("%s\n", ft_strchr(tab, 118));
-	return 0;
 }
