@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I.
 SRC =	ft_atoi.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
@@ -22,7 +22,7 @@ RM = rm -f
 all : $(EXEC)
 
 %.o : %.c # "%" permet de prendre tout les fichier .o et .c
-	$(CC) $(CFLAGS) -I. -o $@ -c $^
+	$(CC) $(CFLAGS) -o $@ -c $^
 
 $(EXEC) : $(OBJ) # Commande qui récuppère le nom cible, les objets et qui compile pour créer ma libft.a
 	ar -rcs $@ $(OBJ)
