@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 11:29:53 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/24 16:20:20 by kedavain         ###   ########.fr       */
+/*   Created: 2021/03/24 14:41:35 by kedavain          #+#    #+#             */
+/*   Updated: 2021/03/24 14:52:24 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	long int	i;
+	long int	n1;
 
-	i = 0;
-	j = ft_strlen(dst);
-	k = ft_strlen(src);
-	if (n <= j || n <= 0)
-		return (k + n);
-	while (src[i] && j + i < (n - 1))
+	n1 = n;
+	if (n < 0)
 	{
-		dst[j + i] = src[i];
-		i++;
+		n1 *= -1;
+		ft_putchar_fd('-', fd);
 	}
-	dst[j + i] = '\0';
-	return (j + k);
+	else if (n1 == 0)
+		ft_putchar_fd('0', fd);
+	i = 1;
+	while (n1 / i != 0)
+		i *= 10;
+	while (i != 1)
+	{
+		i /= 10;
+		ft_putchar_fd((n1 % (10 * i) - n1 % i) / i + '0', fd);
+	}
 }
