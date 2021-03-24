@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/24 11:00:40 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:36:21 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 // VOID FUNCTION //
 void	*ft_memset(void *b, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 #endif
