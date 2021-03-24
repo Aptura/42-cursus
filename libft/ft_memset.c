@@ -6,17 +6,15 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 14:43:46 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/23 14:44:32 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/24 10:55:35 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*bc;
 
 	i = 0;
