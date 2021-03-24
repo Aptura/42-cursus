@@ -16,23 +16,12 @@
 
 void	*ft_memset(void *b, int c, size_t n)
 {
-	unsigned char *bc;
+	size_t		i;
+	unsigned char	*bc;
 
+	i = 0;
 	bc = (unsigned char *)b;
-	while (n)
-	{
-		*bc++ = (unsigned char)c;
-		n--;
-	}
-	b = (void *)bc;
+	while (i < n)
+		bc[i++] = (unsigned char)c;
 	return (b);
-}
-
-int main()
-{
-	char *tab = "Salut ca va";
-
-	//printf("%p\n", ft_memset(tab, '$', 5));
-	printf("%p\n", memset(tab, '$', 5));
-	return 0;
 }
