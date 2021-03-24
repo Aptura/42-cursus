@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 12:22:28 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/24 12:36:30 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:51:52 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		ds[i] = sr[i];
 		if (sr[i] == (unsigned char)c)
 			return ((void *)(dst + i + 1));
-
 		i++;
 	}
 	return (NULL);
