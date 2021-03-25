@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/24 15:51:23 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/25 13:54:13 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_isalnum(int c);
 // CHAR FUNCTION //
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *src, const char *find, size_t n);
 
 // SIZE_T FUNCTION //
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
