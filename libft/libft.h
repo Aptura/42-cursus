@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/26 08:41:55 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/26 10:35:30 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 // INT FUNCTION //
 int	ft_isprint(int c);
@@ -33,11 +34,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *src, const char *find, size_t n);
+char	*ft_strdup(const char *src);
 
 // SIZE_T FUNCTION //
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
+void	*ft_calloc(size_t elementCount, size_t elementSize);
 
 // VOID FUNCTION //
 void	*ft_memset(void *b, int c, size_t n);
