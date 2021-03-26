@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:50:34 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/23 16:01:37 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/26 08:54:56 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
+	unsigned char	*str;
 
-	str = (char *)s;
-	while (*str != c)
+	str = (unsigned char *)s;
+	while (*str)
 	{
-		if (*str == '\0')
-			return (NULL);
+		if (*str == (char)c)
+			return ((char *)str);
 		str++;
 	}
-	return (str);
+	if (*str == (char)c)
+		return ((char *)str);
+	return (NULL);
 }

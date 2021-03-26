@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:46:31 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/25 16:03:56 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/26 09:39:18 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 char	*ft_strnstr(const char *src, const char *find, size_t n)
 {
-	char	*i;
+	size_t	i;
 	size_t	j;
 
-	j = 0;
 	i = 0;
 	if (!*find)
 		return ((char *)src);
-	while (*src && src[j] && j < n)
+	while (src[i] && i < n)
 	{
-		if (*src == *find)
-			i = (char *)src;
-		else
-			return (NULL);
+		j = 0;
+		if (src[i] == find[j])
+		{
+			while (i + j < n && src[i + j] == find[j])
+			{
+				j++;
+				if (!find[j])
+					return ((char *)&src[i]);
+			}
+		}
 		i++;
-		j++;
-		src++;
 	}
-	return (i);
+	return (0);
 }

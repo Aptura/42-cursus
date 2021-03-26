@@ -25,6 +25,7 @@ SRC =	ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_memchr.c \
+		ft_memcmp.c \
 
 OBJ = $(SRC:.c=.o) # Prend la variable source pour convertir l'extension de mes .c en .o
 EXEC = libft.a
