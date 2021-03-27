@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/26 10:35:30 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:24:53 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,25 @@ int	ft_toupper(int c);
 int	ft_atoi(const char *nptr);
 int	ft_isalnum(int c);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
+int	ft_strcmp(char *s1, char *s2);
 
 // CHAR FUNCTION //
+char	*ft_strcpy(char *dest, char *src);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
+char	*ft_strcat(char	*dest, char	*src);
+char	*ft_strncat(char *dest, char *src, unsigned int nb);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *src, const char *find, size_t n);
 char	*ft_strdup(const char *src);
+char	*ft_substr(char const *s, unsigned int start, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 // SIZE_T FUNCTION //
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t n);
-void	*ft_calloc(size_t elementCount, size_t elementSize);
 
 // VOID FUNCTION //
 void	*ft_memset(void *b, int c, size_t n);
@@ -53,5 +60,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_memchr(const void *dst, int c, size_t n);
+void	*ft_calloc(size_t elementCount, size_t elementSize);
 
 #endif

@@ -28,6 +28,13 @@ SRC =	ft_atoi.c \
 		ft_memcmp.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strcpy.c \
+		ft_strcat.c \
+		ft_strncpy.c \
+		ft_strcmp.c \
+		ft_strncat.c \
 
 OBJ = $(SRC:.c=.o) # Prend la variable source pour convertir l'extension de mes .c en .o
 EXEC = libft.a
