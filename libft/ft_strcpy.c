@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 13:25:18 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/27 13:27:51 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/29 13:57:43 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (src[i])

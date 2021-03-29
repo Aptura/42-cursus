@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 10:18:33 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/26 10:45:37 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/29 13:51:37 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *src)
 {
 	char	*srcdup;
-	int 	i;
+	int		i;
 
 	i = 0;
 	srcdup = (char *)ft_calloc(sizeof(char), ft_strlen((char *)src) + 1);

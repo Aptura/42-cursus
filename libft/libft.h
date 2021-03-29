@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/27 14:24:53 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/29 09:35:40 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	ft_atoi(const char *nptr);
 int	ft_isalnum(int c);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 int	ft_strcmp(char *s1, char *s2);
+int	ft_isspace(char *str);
 
 // CHAR FUNCTION //
 char	*ft_strcpy(char *dest, char *src);

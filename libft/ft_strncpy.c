@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:02:29 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/27 14:06:54 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/03/29 13:59:31 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int 	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n && src[i])
