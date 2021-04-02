@@ -1,16 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/02 17:31:32 by kedavain          #+#    #+#             */
+/*   Updated: 2021/04/02 17:32:43 by kedavain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	**split(char const *s, char c)
 {
-	char	**sresult;
-	char	*scopy;
-	char	*ptr;
-	int	sizeS;
-
-	scopy = s;
-	ptr = ft_strchr(scopy, c);
-	while (ptr != NULL)
-	{
-		
-	}
+	
 }
