@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kedavain <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/04/04 15:22:11 by kedavain          #+#    #+#              #
+#    Updated: 2021/04/04 15:22:17 by kedavain         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I.
 SRC =	ft_atoi.c \
@@ -39,6 +51,7 @@ SRC =	ft_atoi.c \
 		ft_isspace.c \
 		ft_strmapi.c \
 		ft_itoa.c \
+		ft_split.c \
 
 OBJ = $(SRC:.c=.o) # Prend la variable source pour convertir l'extension de mes .c en .o
 EXEC = libft.a

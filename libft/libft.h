@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/03/29 09:35:40 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/04 12:02:31 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
 
 // SIZE_T FUNCTION //
 size_t	ft_strlcpy(char *dst, const char *src, size_t n);
