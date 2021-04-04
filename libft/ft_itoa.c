@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:47:06 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/04 17:21:29 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/04 17:31:28 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_len_nb(unsigned int nb)
 	long int	i;
 
 	i = 0;
+	if (nb < 0)
+		nb = -nb;
 	while (nb >= 10)
 	{
 		nb /= 10;
