@@ -17,7 +17,7 @@ int	ft_len_nb(unsigned int nb)
 	long int	i;
 
 	i = 0;
-	if (nb < 0)
+	if (nb <= 0)
 		nb = -nb;
 	while (nb >= 10)
 	{

@@ -53,23 +53,29 @@ SRC =	ft_atoi.c \
 		ft_itoa.c \
 		ft_split.c \
 
+LISTE =
+
 OBJ = $(SRC:.c=.o) # Prend la variable source pour convertir l'extension de mes .c en .o
-EXEC = libft.a
+OBJBONUS =$(LISTE:.c=.o)
+NAME = libft.a
 RM = rm -f
 
-all : $(EXEC)
+all : $(NAME)
 
 %.o : %.c # "%" permet de prendre tout les fichier .o et .c
 	$(CC) $(CFLAGS) -o $@ -c $^
 
-$(EXEC) : $(OBJ) # Commande qui récuppère le nom cible, les objets et qui compile pour créer ma libft.a
+$(NAME) : $(OBJ) # Commande qui récuppère le nom cible, les objets et qui compile pour créer ma libft.a
 	ar -rcs $@ $(OBJ)
+
+bonus :	$(OBJBONUS)
+	ar -rcs $(NAME) $(OBJBONUS)
 
 clean : 
 	$(RM) $(OBJ)
 
 fclean : clean
-	$(RM) $(EXEC)
+	$(RM) $(NAME)
 
 re : fclean all
 
