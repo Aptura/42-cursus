@@ -6,17 +6,17 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:47:06 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/04 17:31:28 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/07 10:02:12 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len_nb(unsigned int nb)
+int	ft_len_nb(long int nb)
 {
-	long int	i;
+	size_t	i;
 
-	i = 0;
+	i = 1;
 	if (nb <= 0)
 		nb = -nb;
 	while (nb >= 10)
@@ -24,10 +24,10 @@ int	ft_len_nb(unsigned int nb)
 		nb /= 10;
 		i++;
 	}
-	return (i + 1);
+	return (i);
 }
 
-static int	isneg(int n)
+static int	isneg(long int n)
 {
 	if (n < 0)
 		return (1);
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 	long int		nb;
 
 	nb = n;
-	len = ft_len_nb(nb);
+	len = ft_len_nb(n);
 	if (isneg(nb))
 		len++;
 	str = ft_calloc((len + 1), sizeof(*str));
@@ -53,7 +53,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		nb = -nb;
 	}
-	if (nb <= 0)
+	if (nb == 0)
 		str[len - 1] = '0';
 	while (nb > 0)
 	{

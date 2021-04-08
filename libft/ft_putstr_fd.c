@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:29:54 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/04 12:44:52 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/07 10:36:20 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s != '\0')
+	if (!s)
+		return ;
+	while (*s)
 	{
 		ft_putchar_fd(*s, fd);
 		s++;
