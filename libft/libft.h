@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_list
+typedef struct	s_list
 {
 	void		*content;
 	struct s_list	*next;
@@ -35,6 +35,7 @@ int	ft_isalnum(int c);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 int	ft_strcmp(char *s1, char *s2);
 int	ft_isspace(char *str);
+int	ft_lstsize(t_list *lst);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strcat(char	*dest, char	*src);
@@ -64,7 +65,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_memchr(const void *dst, int c, size_t n);
 void	*ft_calloc(size_t elementCount, size_t elementSize);
-t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
