@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+static int	ischarset(char c, char charset)
+{
+	if (c == charset)
+		return (1);
+	return (0);
+}
+
 static int	countword(char *str, char c)
 {
 	int	state;
@@ -26,7 +33,7 @@ static int	countword(char *str, char c)
 	nb_w = 0;
 	while (*str)
 	{
-		if (*str == c)
+		if (ischarset(*str, c)
 			state = OUTSIDE;
 		else if (state == OUTSIDE)
 		{
