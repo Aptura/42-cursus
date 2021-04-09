@@ -86,6 +86,18 @@ static char	*copy(char const *s, char c, int k)
 	return (word);
 }
 
+static void	free_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**splitted;
@@ -104,6 +116,7 @@ char	**ft_split(char const *s, char c)
 		splitted[j] = copy(s, c, j);
 		if (!splitted[j])
 		{
+			free_tab(splitted);
 			free(splitted);
 			return (NULL);
 		}
