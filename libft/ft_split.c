@@ -1,134 +1,110 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 13:20:21 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/09 14:37:13 by kedavain         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static int	ischarset(char c, char charset)
+static int  countword(char const *s, char c)
 {
-	if (c == charset)
-		return (1);
-	return (0);
+    int     i;
+    int     count;
+
+    i = 0;
+    count = 0;
+    while (s[i] && s[i] == c)
+        i++;
+    while (s[i])
+    {
+        if (s[i] != c && (s[i + 1] == 0 || s[i + 1] == c)
+            count++;
+        i++;
+    }
+    return (count);
 }
 
-static int	countword(char *str, char c)
+static int  lenword(char const *s, char c, int a)
 {
-	int	state;
-	int	nb_w;
+    int     i;
+    int     len;
 
-	enum e_state
-	{
-		OUTSIDE,
-		INSIDE
-	};
-	state = OUTSIDE;
-	nb_w = 0;
-	while (*str)
-	{
-		if (ischarset(*str, c))
-			state = OUTSIDE;
-		else if (state == OUTSIDE)
-		{
-			state = INSIDE;
-			++nb_w;
-		}
-		str++;
-	}
-	return (nb_w);
+    i = 0;
+    len = 0;
+    while (s[i] == c)
+        i++;
+    while (a)
+    {
+        if (s[i] == c && s[i + 1] != c)
+            a--;
+        i++;
+    }
+    while (s[i] && s[i] != c)
+    {
+        len++;
+        i++;
+    }
+    return (len);
 }
 
-static int	countletter(char *s, char c)
+static char     *copyword(char const *s, char c, int a)
 {
-	size_t	i;
-	size_t	j;
-	size_t	count;
+    char    *wordcpy;
+    int     i;
+    int     j;
 
-	i = 0;
-	j = 0;
-	count = 0;
-	while (s[i] == c || s[j])
-	{
-		if (s[i] != c)
-			count++;
-		i++;
-		j++;
-	}
-	return (count);
-}
+    i = 0;
+    j = 0;
 
-static char	*copy(char const *s, char c, int k)
-{
-	char	*word;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	word = malloc(sizeof(char) * countletter((char *)s, c) + 1);
-	if (!word)
-		return (NULL);
-	while (s[i] == c)
-		i++;
-	while (k)
+    wordcpy = malloc(sizeof(char) * lenword(s, c, a) + 1);
+    if (!wordcpy)
+        return (NULL);
+    while (a)
+    {
+        if (s[i] == c && s[i + 1] != c)
+            a--;
+        i++;
+    }
+    while (s[i] && s[i] != c)kedavaine
 	{
-		if (s[i] == c && s[i + 1] != c)
-			k--;
-		i++;
-	}
-	while (s[i] && s[i] != c)
-	{
-		word[j] = s[i];
+		wordcpy[j] = s[i];
 		j++;
 		i++;
 	}
-	word[j] = 0;
-	return (word);
+	wordcpy[j] = 0;
+	return (wordcpy);
 }
 
-static void	free_tab(char **tab)
+static void	freenew(char **new)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	while (new[i])
 	{
-		free(tab[i]);
+		free(new[i]);
 		i++;
 	}
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**splitted;
-	unsigned int	j;
-	unsigned int	nb_w;
+	int		i;
+	int		cases;
+	char	**new;
 
-	j = 0;
-	if (!s || !c)
+	if (!s)
 		return (NULL);
-	nb_w = countword((char *)s, c);
-	splitted = (char **)malloc(sizeof(char *) * nb_w + 2);
-	if (!splitted)
+	cases = word_count(s, c);
+	new = (char **)malloc(sizeof(char *) * (cases + 1));
+	if (!new)
 		return (NULL);
-	while (j < nb_w)
+	i = 0;
+	while (i < cases)
 	{
-		splitted[j] = copy(s, c, j);
-		if (!splitted[j])
+		new[i] = copyword(s, c, i);
+		if (!new[i])
 		{
-			free_tab(splitted);
-			free(splitted);
+			freenew(new);
+			free(new);
 			return (NULL);
 		}
-		j++;
+		i++;
 	}
-	splitted[j] = 0;
-	return (splitted);
+	new[i] = 0;
+	return (new);
 }
