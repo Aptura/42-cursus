@@ -16,11 +16,12 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
 typedef struct s_list
 {
-	void		*content;
+	void		content;
 	struct s_list	*next;
-}	t_list;
+}t_list;
 
 int	ft_isprint(int c);
 int	ft_isdigit(int c);
@@ -72,4 +73,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+
 #endif
