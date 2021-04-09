@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/04 12:02:31 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/09 22:37:58 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,23 @@
 
 typedef struct s_list
 {
-	void		content;
+	void			content;
 	struct s_list	*next;
-}t_list;
+}					t_list;
 
-int	ft_isprint(int c);
-int	ft_isdigit(int c);
-int	ft_isascii(int c);
-int	ft_isalpha(int c);
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n);
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-int	ft_atoi(const char *nptr);
-int	ft_isalnum(int c);
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-int	ft_strcmp(char *s1, char *s2);
-int	ft_isspace(char *str);
-int	ft_lstsize(t_list *lst);
+int		ft_isprint(int c);
+int		ft_isdigit(int c);
+int		ft_isascii(int c);
+int		ft_isalpha(int c);
+int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_atoi(const char *nptr);
+int		ft_isalnum(int c);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_isspace(char *str);
+int		ft_lstsize(t_list *lst);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strcat(char	*dest, char	*src);
