@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/09 15:24:29 by kedavain          #+#    #+#             */
+/*   Updated: 2021/04/09 15:25:32 by kedavain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int  countword(char const *s, char c)
@@ -11,7 +23,7 @@ static int  countword(char const *s, char c)
         i++;
     while (s[i])
     {
-        if (s[i] != c && (s[i + 1] == 0 || s[i + 1] == c)
+        if (s[i] != c && (s[i + 1] == 0 || s[i + 1] == c))
             count++;
         i++;
     }
@@ -50,7 +62,7 @@ static char     *copyword(char const *s, char c, int a)
     i = 0;
     j = 0;
 
-    wordcpy = malloc(sizeof(char) * lenword(s, c, a) + 1);
+    wordcpy = (char *)ft_calloc(sizeof(char), lenword(s, c, a) + 1);
     if (!wordcpy)
         return (NULL);
     while (a)
@@ -59,7 +71,7 @@ static char     *copyword(char const *s, char c, int a)
             a--;
         i++;
     }
-    while (s[i] && s[i] != c)kedavaine
+    while (s[i] && s[i] != c)
 	{
 		wordcpy[j] = s[i];
 		j++;
@@ -89,8 +101,8 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	cases = word_count(s, c);
-	new = (char **)malloc(sizeof(char *) * (cases + 1));
+	cases = countword(s, c);
+	new = (char **)ft_calloc(sizeof(char *), (cases + 1));
 	if (!new)
 		return (NULL);
 	i = 0;
