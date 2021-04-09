@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 13:20:21 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/04 15:46:52 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:37:13 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	countword(char *str, char c)
 	nb_w = 0;
 	while (*str)
 	{
-		if (ischarset(*str, c)
+		if (ischarset(*str, c))
 			state = OUTSIDE;
 		else if (state == OUTSIDE)
 		{
@@ -112,7 +112,7 @@ char	**ft_split(char const *s, char c)
 	unsigned int	nb_w;
 
 	j = 0;
-	if (!s)
+	if (!s || !c)
 		return (NULL);
 	nb_w = countword((char *)s, c);
 	splitted = (char **)malloc(sizeof(char *) * nb_w + 2);
