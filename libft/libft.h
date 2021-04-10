@@ -6,12 +6,12 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/09 22:37:58 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/10 12:32:47 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_H_
+# define LIBFT_H_
 # include <stddef.h>
 # include <string.h>
 # include <unistd.h>
@@ -19,7 +19,7 @@
 
 typedef struct s_list
 {
-	void			content;
+	void			*content;
 	struct s_list	*next;
 }					t_list;
 
@@ -73,5 +73,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
-
 #endif

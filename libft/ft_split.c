@@ -6,78 +6,78 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 15:24:29 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/09 15:25:32 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:35:43 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  countword(char const *s, char c)
+static int	countword(char const *s, char c)
 {
-    int     i;
-    int     count;
+    int	i;
+    int	count;
 
-    i = 0;
-    count = 0;
-    while (s[i] && s[i] == c)
-        i++;
-    while (s[i])
-    {
-        if (s[i] != c && (s[i + 1] == 0 || s[i + 1] == c))
-            count++;
-        i++;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c))
+			count++;
+		i++;
+	}
+	return (count);
 }
 
 static int  lenword(char const *s, char c, int a)
 {
-    int     i;
-    int     len;
+	int     i;
+	int     len;
 
-    i = 0;
-    len = 0;
-    while (s[i] == c)
-        i++;
-    while (a)
-    {
-        if (s[i] == c && s[i + 1] != c)
-            a--;
-        i++;
-    }
-    while (s[i] && s[i] != c)
-    {
-        len++;
-        i++;
-    }
-    return (len);
+	i = 0;
+	len = 0;
+	while (s[i] == c)
+		i++;
+	while (a)
+	{
+		if (s[i] == c && s[i + 1] != c)
+			a--;
+		i++;
+	}
+	while (s[i] && s[i] != c)
+	{
+		len++;
+		i++;
+	}
+	return (len);
 }
 
 static char     *copyword(char const *s, char c, int a)
 {
-    char    *wordcpy;
-    int     i;
-    int     j;
+	char    *wordcpy;
+	int     i;
+	int     j;
 
-    i = 0;
-    j = 0;
+	i = 0;
+	j = 0;
 
-    wordcpy = (char *)ft_calloc(sizeof(char), lenword(s, c, a) + 1);
-    if (!wordcpy)
-        return (NULL);
-    while (a)
-    {
-        if (s[i] == c && s[i + 1] != c)
-            a--;
-        i++;
-    }
-    while (s[i] && s[i] != c)
+	wordcpy = (char *)malloc(sizeof(char) * lenword(s, c, a) + 1);
+	if (!wordcpy)
+		return (NULL);
+	while (a)
+	{
+		if (s[i] == c && s[i + 1] != c)
+			a--;
+		i++;
+	}
+	while (s[i] && s[i] != c)
 	{
 		wordcpy[j] = s[i];
 		j++;
 		i++;
 	}
-	wordcpy[j] = 0;
+	wordcpy[j] = '\0';
 	return (wordcpy);
 }
 
@@ -102,7 +102,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	cases = countword(s, c);
-	new = (char **)ft_calloc(sizeof(char *), (cases + 1));
+	new = (char **)malloc(sizeof(char *) * (cases + 1));
 	if (!new)
 		return (NULL);
 	i = 0;
