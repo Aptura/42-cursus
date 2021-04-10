@@ -6,7 +6,7 @@
 /*   By: kedavain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 11:28:32 by kedavain          #+#    #+#             */
-/*   Updated: 2021/04/10 12:32:47 by kedavain         ###   ########.fr       */
+/*   Updated: 2021/04/10 15:49:28 by kedavain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+
 #endif
