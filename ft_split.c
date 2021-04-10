@@ -14,8 +14,8 @@
 
 static int	countword(char const *s, char c)
 {
-    int	i;
-    int	count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -30,10 +30,10 @@ static int	countword(char const *s, char c)
 	return (count);
 }
 
-static int  lenword(char const *s, char c, int a)
+static int	lenword(char const *s, char c, int a)
 {
-	int     i;
-	int     len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = 0;
@@ -53,15 +53,14 @@ static int  lenword(char const *s, char c, int a)
 	return (len);
 }
 
-static char     *copyword(char const *s, char c, int a)
+static char	*copyword(char const *s, char c, int a)
 {
-	char    *wordcpy;
-	int     i;
-	int     j;
+	char	*wordcpy;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-
 	wordcpy = (char *)malloc(sizeof(char) * lenword(s, c, a) + 1);
 	if (!wordcpy)
 		return (NULL);
