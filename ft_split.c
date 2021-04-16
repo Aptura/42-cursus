@@ -64,6 +64,8 @@ static char	*copyword(char const *s, char c, int a)
 	wordcpy = (char *)malloc(sizeof(char) * lenword(s, c, a) + 1);
 	if (!wordcpy)
 		return (NULL);
+	while (s[i] == c)
+		i++;
 	while (a)
 	{
 		if (s[i] == c && s[i + 1] != c)
